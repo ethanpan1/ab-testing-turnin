@@ -2,13 +2,110 @@
 
 <html>
   <head>
-    <title>INSERT TITLE HERE!</title>
+    <title>A/B Testing</title>
     <link rel="stylesheet" href="index.css">
     <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   </head>
 
   <body>
-    <!-- TODO: put your HTML code here! -->
+    <div class="title">
+      <h1>A/B Testing</h1>
+    </div>
+    <div class="title-description">
+      <p>For this assignment, I implemented an A/B test for a mock cactus shop
+        website. I practiced data collection for A/B tests, as well as skills in
+        statistical analysis, specifically two-sample t-tests and chi-square
+        tests.
+    </div>
+    <div class="part">
+      <h2>Part 0: Creating Hypotheses for Statistical Tests</h2>
+      The first part of the assignment was to modify a template to create two
+      versions of a cactus shop website. These two versions would be used for
+      our A/B test. I've included screenshots of both pages, as well as the
+      link to <a href="immense-scrubland-61011.herokuapp.com">the deployed app</a>.
+      <br>
+      <div class="screenshots-container">
+        <div class="screenshot-container">
+          A
+          <img alt="a-screenshot" src="a-screenshot.png" class="screenshot">
+        </div>
+        <div class="screenshot-container">
+          B
+          <img alt="b-screenshot" src="b-screenshot.png" class="screenshot">
+        </div>
+      </div>
+      <br>
+      In particular, I was curious whether really minute changes in the interface
+      would have significant effects on the metrics I'd be testing. As such, I
+      changed the subheading of the page, the font of the price (italic vs. bold),
+      and the color of the item count. While I changed the images to be more
+      aesthetically pleasing, they and their layout were the same in both interfaces.
+    </div>
+    <div class="part">
+      <h2>Part 1: Creating Hypotheses for Statistical Tests</h2>
+      I ended up testing two metrics for my A/B test. The first was the <b>time to
+      complete</b> the task: adding at least $150 of cacti to the cart. The second
+      was the <b>return rate</b>: how often users went to the checkout page and back
+      to the buying page. I created null and alternative hypotheses for both.
+      <br>
+      <div class="hypothesis-container">
+        <h3>Time to Complete</h3>
+        Null hypothesis: <i>Users do not differ in the amount of time spent buying
+        cacti between interface A and interface B.</i>
+        <br>
+        <br>
+        Alternate hypothesis: <i>Users spend less time buying cacti in interface B
+        than in interface A.</i>
+        <br>
+        <br>
+  	    Explanation: Prices are bolded rather than italicized, making them more noticeable or easier to find.
+  			Subheading is shortened and less interesting, so users may spend less time reading it.
+      </div>
+      <div class="hypothesis-container">
+        <h3>Return Rate</h3>
+        Null hypothesis: <i>Users do not differ in how frequently they return to the
+        cactus buying page between interface A and interface B.</i>
+        <br>
+        <br>
+        Alternate hypothesis: <i>Users more often return to the cactus buying page in
+        interface A than in interface B.</i>
+        <br>
+        <br>
+        Explanation: The “X in cart” counter is green in interface A, highlighting it and
+        potentially encouraging users to return and look at the item counts. This likely would
+        not change how often users underspend in their first attempt at the task, but could change
+        whether they choose to go back anyway.
+      </div>
+    </div>
+    <div class="part">
+      <h2>Part 2: Collecting Data and Applying Scripts</h2>
+      As described above, I tasked users to add at least $150 worth of cacti to the cart. I fielded
+      users through Piazza as well as by messaging my friends. I then extracted user logs through
+      Heroku and filtered them. I proceeded to preprocess the data and run it through scripts that
+      applied the statistical tests.
+    </div>
+    <div class="part">
+      <h2>Part 3: Conclusions and Takeaways</h2>
+      I created an infographic to display the results of the tests. As it states, interfaces A and B
+      were not statistically different in time to completion or return rate.
+      <br>
+      <div class="infographic-container">
+        <img id="infographic"src="AB infographic.png" alt="test-infographic" height="840" width="600">
+      </div>
+      Some takeaways from the assignment:
+      <ul>
+        <li>Even if the means may suggest significance, it all comes down to sample size.
+          My sample size was very low, so there wasn’t enough statistical power to substantiate
+          the difference in means.
+        <li>My users were not acting entirely naturally, especially since my classmates participated in
+          my A/B test among many others. This limits the results.
+        <li>It is still unclear whether such minute changes can have significant effects on user behavior.
+          Larger design changes, like layout or navigation, are more likely to have significant effects.
+      </ul>
+    </div>
+    <h2>Thanks for reading!</h2>
   </body>
 </html>

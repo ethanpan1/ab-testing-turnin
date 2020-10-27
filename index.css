@@ -1,1 +1,53 @@
 /* Put your style information here! */
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: "Lato";
+  background-color: #fffff4;
+}
+
+h1 {
+  color: #5b8b2c;
+  font-size: 40px;
+}
+
+h2 {
+  color: #69A257;
+}
+
+.screenshots-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.screenshot-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 10px;
+}
+
+.screenshot {
+  height: 393px;
+  width: 541px;
+}
+
+.hypothesis-container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.infographic-container {
+  display:flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#infographic {
+  border-radius: 5px;
+  border: 3px solid #D6D6D6;
+}
+li {
+  margin:5px;
+}
